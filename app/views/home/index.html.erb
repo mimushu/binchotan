@@ -7,7 +7,7 @@
   <br>
   <p>----------------------------------------------------</p>
   <h4>No.<%= number+1 %></h4>
-  <h2>品名：<%= item.title %></h2>
+  <h2>品名：<%= link_to item.title, home_path(item) %></h2>
   <h2>価格：<%= item.price %>円</h2>
   <h4>所属：<%= item.place %></h4>
   <br>
