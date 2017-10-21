@@ -3,6 +3,6 @@ class HomeController < ApplicationController
   protect_from_forgery with: :exception
 
   def index
-    @user = user_session
+    @items = Item.all
   end
 end

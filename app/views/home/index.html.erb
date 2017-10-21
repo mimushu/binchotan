@@ -1,7 +1,14 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<%= @user %>
+<h1>現在おうちで待機中のバーベキューコンロ</h1>
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<p>このページはログインしてないと見られないよ！</p>
+
 <br>
-<p>嘘だと思うならいっかいログアウトしてからもう一度https://binchotan.herokuapp.com/にアクセスしてみよう！ログイン画面に自動で飛ばされるはずだよ</p>
+
+<% @items.each_with_index do |item, number| %>
+  <br>
+  <p>----------------------------------------------------</p>
+  <h4>No.<%= number+1 %></h4>
+  <h2>品名：<%= item.title %></h2>
+  <h2>価格：<%= item.price %>円</h2>
+  <h4>所属：<%= item.place %></h4>
+  <br>
+<% end %>
